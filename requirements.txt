@@ -1,0 +1,29 @@
+# ===========================================
+# Fast Hindi Text Extraction Server
+# ===========================================
+# Install: pip install -r requirements.txt
+# System:  sudo apt install tesseract-ocr tesseract-ocr-hin
+# Run:     uvicorn main:app --host 0.0.0.0 --port 8000
+# ===========================================
+
+# --- Web Framework ---
+fastapi==0.128.8              # REST API framework
+uvicorn==0.40.0               # ASGI server for FastAPI
+python-multipart==0.0.22      # File upload support (multipart/form-data)
+starlette==0.52.1             # ASGI toolkit (FastAPI dependency)
+pydantic==2.12.5              # Data validation (FastAPI dependency)
+pydantic_core==2.41.5         # Pydantic core (compiled backend)
+typing_extensions==4.15.0     # Backported typing features
+typing-inspection==0.4.2      # Runtime type inspection
+anyio==4.12.1                 # Async I/O compatibility layer
+
+# --- Document Processing ---
+PyMuPDF==1.27.1               # PDF text extraction & page rendering (fitz)
+python-docx==1.2.0            # DOCX file text extraction
+pillow==12.1.1                # Image processing (PIL)
+
+# --- OCR ---
+pytesseract==0.3.13           # Python wrapper for Tesseract OCR engine
+# NOTE: Requires system package: tesseract-ocr + tesseract-ocr-hin
+#   Ubuntu/Debian: sudo apt install tesseract-ocr tesseract-ocr-hin
+#   Arch:          sudo pacman -S tesseract tesseract-data-hin
